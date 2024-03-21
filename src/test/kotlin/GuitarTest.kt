@@ -1,5 +1,4 @@
-import org.example.Guitar
-import org.example.Inventory
+import org.example.*
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
@@ -12,26 +11,26 @@ class GuitarTest {
         inventory.addGuitar(
             "V95693",
             1499.95,
-            "Fender",
+            Builder.FENDER,
             "Stratocastor",
-            "Electric",
-            "Alder",
-            "Alder"
+            Type.ELECTRIC,
+            Wood.ALDER,
+            Wood.ALDER
         )
 
         val guitar = Guitar(
             "V95693",
             1499.95,
-            "Fender",
+            Builder.FENDER,
             "Stratocastor",
-            "Electric",
-            "Alder",
-            "Alder"
+            Type.ELECTRIC,
+            Wood.ALDER,
+            Wood.ALDER
         )
 
         val getGuitarThroughSerialNumber = inventory.getGuitar("V95693")
 
-        assertEquals(getGuitarThroughSerialNumber!!.getSerialNumber(),guitar.getSerialNumber())
+        assertEquals(getGuitarThroughSerialNumber!!.serialNumber,guitar.serialNumber)
     }
 
     @Test
@@ -42,31 +41,31 @@ class GuitarTest {
         inventory.addGuitar(
             "V95693",
             1499.95,
-            "Fender",
+            Builder.FENDER,
             "Stratocastor",
-            "Electric",
-            "Alder",
-            "Alder"
+            Type.ELECTRIC,
+            Wood.ALDER,
+            Wood.ALDER
         )
 
         val guitar = Guitar(
             "V95693",
             1499.95,
-            "Fender",
+            Builder.FENDER,
             "Stratocastor",
-            "Electric",
-            "Alder",
-            "Alder"
+            Type.ELECTRIC,
+            Wood.ALDER,
+            Wood.ALDER
         )
 
-        val getGuitarThroughSearch = inventory.search("Fender")
+        val getGuitarThroughSearch = inventory.search(Builder.FENDER)
 
-        assertEquals(getGuitarThroughSearch!!.getSerialNumber(),guitar.getSerialNumber())
-        assertEquals(getGuitarThroughSearch.getPrice(),guitar.getPrice())
-        assertEquals(getGuitarThroughSearch.getBuilder(),guitar.getBuilder())
-        assertEquals(getGuitarThroughSearch.getModel(),guitar.getModel())
-        assertEquals(getGuitarThroughSearch.getType(),guitar.getType())
-        assertEquals(getGuitarThroughSearch.getBackWood(),guitar.getBackWood())
-        assertEquals(getGuitarThroughSearch.getTopWood(),guitar.getTopWood())
+        assertEquals(getGuitarThroughSearch!!.serialNumber,guitar.serialNumber)
+        assertEquals(getGuitarThroughSearch.price,guitar.price)
+        assertEquals(getGuitarThroughSearch.builder,guitar.builder)
+        assertEquals(getGuitarThroughSearch.model,guitar.model)
+        assertEquals(getGuitarThroughSearch.type,guitar.type)
+        assertEquals(getGuitarThroughSearch.backWood,guitar.backWood)
+        assertEquals(getGuitarThroughSearch.topWood,guitar.topWood)
     }
 }

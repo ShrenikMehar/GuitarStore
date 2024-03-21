@@ -4,11 +4,11 @@ class Inventory(private val guitars: MutableList<Guitar>) {
     fun addGuitar(
          serialNumber: String,
          price: Double,
-         builder: String,
+         builder: Builder,
          model: String,
-         type: String,
-         backWood: String,
-         topWood: String
+         type: Type,
+         backWood: Wood,
+         topWood: Wood
     ) {
          guitars.addLast(
              Guitar(serialNumber, price, builder, model, type, backWood, topWood)
@@ -17,20 +17,20 @@ class Inventory(private val guitars: MutableList<Guitar>) {
 
     fun getGuitar(serialNumber: String): Guitar? {
         for (guitar in guitars)
-            if (guitar.getSerialNumber() == serialNumber) return guitar
+            if (guitar.serialNumber == serialNumber) return guitar
         return null
     }
 
-    fun search(parameterToSearch: String): Guitar? {
+    fun search(parameterToSearch: Any): Guitar? {
         for (guitar in guitars) {
             when (parameterToSearch) {
-                guitar.getSerialNumber() -> return guitar
-                guitar.getPrice().toString() -> return guitar
-                guitar.getBuilder() -> return guitar
-                guitar.getModel() -> return guitar
-                guitar.getType() -> return guitar
-                guitar.getBackWood() -> return guitar
-                guitar.getTopWood() -> return guitar
+                guitar.serialNumber -> return guitar
+                guitar.price -> return guitar
+                guitar.builder -> return guitar
+                guitar.model -> return guitar
+                guitar.type -> return guitar
+                guitar.backWood -> return guitar
+                guitar.topWood -> return guitar
             }
         }
         return null
