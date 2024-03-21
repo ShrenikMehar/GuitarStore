@@ -1,6 +1,6 @@
 package org.example
 
-class Inventory(private val guitars: List<Guitar>) {
+class Inventory(private val guitars: MutableList<Guitar>) {
     fun addGuitar(
          serialNumber: String,
          price: Double,
@@ -21,8 +21,18 @@ class Inventory(private val guitars: List<Guitar>) {
         return null
     }
 
-    fun search(guitar: Guitar): Guitar? {
-        if (guitar in guitars) return guitar
+    fun search(parameterToSearch: String): Guitar? {
+        for (guitar in guitars) {
+            when (parameterToSearch) {
+                guitar.getSerialNumber() -> return guitar
+                guitar.getPrice().toString() -> return guitar
+                guitar.getBuilder() -> return guitar
+                guitar.getModel() -> return guitar
+                guitar.getType() -> return guitar
+                guitar.getBackWood() -> return guitar
+                guitar.getTopWood() -> return guitar
+            }
+        }
         return null
     }
 }
