@@ -21,18 +21,20 @@ class Inventory(private val guitars: MutableList<Guitar>) {
         return null
     }
 
-    fun search(parameterToSearch: Any): Guitar? {
+    fun search(parameterToSearch: Any): Set<Guitar> {
+        val searchedGuitars = mutableSetOf<Guitar>()
+
         for (guitar in guitars) {
             when (parameterToSearch) {
-                guitar.serialNumber -> return guitar
-                guitar.price -> return guitar
-                guitar.builder -> return guitar
-                guitar.model -> return guitar
-                guitar.type -> return guitar
-                guitar.backWood -> return guitar
-                guitar.topWood -> return guitar
+                guitar.serialNumber -> searchedGuitars.add(guitar)
+                guitar.price -> searchedGuitars.add(guitar)
+                guitar.builder -> searchedGuitars.add(guitar)
+                guitar.model -> searchedGuitars.add(guitar)
+                guitar.type -> searchedGuitars.add(guitar)
+                guitar.backWood -> searchedGuitars.add(guitar)
+                guitar.topWood -> searchedGuitars.add(guitar)
             }
         }
-        return null
+        return searchedGuitars
     }
 }

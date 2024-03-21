@@ -48,24 +48,39 @@ class GuitarTest {
             Wood.ALDER
         )
 
-        val guitar = Guitar(
-            "V95693",
-            1499.95,
+        inventory.addGuitar(
+            "V69420",
+            1999.95,
             Builder.FENDER,
-            "Stratocastor",
-            Type.ELECTRIC,
-            Wood.ALDER,
-            Wood.ALDER
+            "Cratos",
+            Type.ACOUSTIC,
+            Wood.SITKA,
+            Wood.BRAZILIAN_ROSEWOOD
+        )
+
+        val guitarsList = mutableSetOf(
+            Guitar(
+                "V95693",
+                1499.95,
+                Builder.FENDER,
+                "Stratocastor",
+                Type.ELECTRIC,
+                Wood.ALDER,
+                Wood.ALDER
+            ),
+            Guitar(
+                "V69420",
+                1999.95,
+                Builder.FENDER,
+                "Cratos",
+                Type.ACOUSTIC,
+                Wood.SITKA,
+                Wood.BRAZILIAN_ROSEWOOD
+            )
         )
 
         val getGuitarThroughSearch = inventory.search(Builder.FENDER)
 
-        assertEquals(getGuitarThroughSearch!!.serialNumber,guitar.serialNumber)
-        assertEquals(getGuitarThroughSearch.price,guitar.price)
-        assertEquals(getGuitarThroughSearch.builder,guitar.builder)
-        assertEquals(getGuitarThroughSearch.model,guitar.model)
-        assertEquals(getGuitarThroughSearch.type,guitar.type)
-        assertEquals(getGuitarThroughSearch.backWood,guitar.backWood)
-        assertEquals(getGuitarThroughSearch.topWood,guitar.topWood)
+        assertEquals(getGuitarThroughSearch,guitarsList)
     }
 }
