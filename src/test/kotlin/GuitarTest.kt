@@ -11,21 +11,25 @@ class GuitarTest {
         inventory.addGuitar(
             "V95693",
             1499.95,
-            Builder.FENDER,
-            "Stratocastor",
-            Type.ELECTRIC,
-            Wood.ALDER,
-            Wood.ALDER
+            GuitarSpecs(
+                Builder.FENDER,
+                "Stratocastor",
+                Type.ELECTRIC,
+                Wood.ALDER,
+                Wood.ALDER
+            )
         )
 
         val guitar = Guitar(
             "V95693",
             1499.95,
-            Builder.FENDER,
-            "Stratocastor",
-            Type.ELECTRIC,
-            Wood.ALDER,
-            Wood.ALDER
+            GuitarSpecs(
+                Builder.FENDER,
+                "Stratocastor",
+                Type.ELECTRIC,
+                Wood.ALDER,
+                Wood.ALDER
+            )
         )
 
         val getGuitarThroughSerialNumber = inventory.getGuitar("V95693")
@@ -41,41 +45,49 @@ class GuitarTest {
         inventory.addGuitar(
             "V95693",
             1499.95,
-            Builder.FENDER,
-            "Stratocastor",
-            Type.ELECTRIC,
-            Wood.ALDER,
-            Wood.ALDER
+            GuitarSpecs(
+                Builder.FENDER,
+                "Stratocastor",
+                Type.ELECTRIC,
+                Wood.ALDER,
+                Wood.ALDER
+            )
         )
 
         inventory.addGuitar(
             "V69420",
             1999.95,
-            Builder.FENDER,
-            "Cratos",
-            Type.ACOUSTIC,
-            Wood.SITKA,
-            Wood.BRAZILIAN_ROSEWOOD
+            GuitarSpecs(
+                Builder.FENDER,
+                "Cratos",
+                Type.ACOUSTIC,
+                Wood.SITKA,
+                Wood.BRAZILIAN_ROSEWOOD
+            )
         )
 
         val guitarsList = mutableSetOf(
             Guitar(
                 "V95693",
                 1499.95,
-                Builder.FENDER,
-                "Stratocastor",
-                Type.ELECTRIC,
-                Wood.ALDER,
-                Wood.ALDER
+                GuitarSpecs(
+                    Builder.FENDER,
+                    "Stratocastor",
+                    Type.ELECTRIC,
+                    Wood.ALDER,
+                    Wood.ALDER
+                )
             ),
             Guitar(
                 "V69420",
                 1999.95,
-                Builder.FENDER,
-                "Cratos",
-                Type.ACOUSTIC,
-                Wood.SITKA,
-                Wood.BRAZILIAN_ROSEWOOD
+                GuitarSpecs(
+                    Builder.FENDER,
+                    "Cratos",
+                    Type.ACOUSTIC,
+                    Wood.SITKA,
+                    Wood.BRAZILIAN_ROSEWOOD
+                )
             )
         )
 
